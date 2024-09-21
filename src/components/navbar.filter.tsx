@@ -9,7 +9,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const NavbarFilter = () => {
+const NavbarFilter = ({className}:{className?:string}) => {
   const [priceRange, setPriceRange] = React.useState([0, 100]);
   const [platform, setPlatform] = React.useState<string[]>([]);
 
@@ -51,7 +51,7 @@ const NavbarFilter = () => {
         <Button
           size={"icon"}
           variant={"outline"}
-          className="min-w-[40px] h-[40px] rounded-full z-20 ml-2"
+          className={cn("min-w-[40px] h-[40px] rounded-full z-20 ml-2", className)}
         >
           <SlidersHorizontalIcon
             size={20}

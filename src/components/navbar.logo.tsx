@@ -4,7 +4,7 @@ import React from "react";
 
 const NavbarLogo = () => {
   return (
-    <Link href={"/"} className="mr-[100px] hidden lg:block">
+    <Link href={"/"} className="mr-[100px]">
       <Image
         src={"/logo.png"}
         width={170}

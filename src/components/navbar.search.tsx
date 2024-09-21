@@ -6,8 +6,9 @@ import { motion } from "framer-motion";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { categoryStructure } from "@/lib/categories";
+import { cn } from "@/lib/utils";
 
-const NavbarSearch = () => {
+const NavbarSearch = ({className}:{className?:string}) => {
   const query = useSearchParams();
   const [searchKeyword, setSearchKeyword] = useState(
     query.get("keyword") || ""
@@ -31,7 +32,7 @@ const NavbarSearch = () => {
   };
 
   return (
-    <div className="rounded-full h-12 w-[529px] grid grid-cols-2 bg-[#2B2828] text-[#B3B3B3] overflow-clip relative">
+    <div className={cn("rounded-full h-12 w-[529px] grid grid-cols-2 bg-[#2B2828] text-[#B3B3B3] overflow-clip relative", className)}>
       <Search value={searchKeyword} setValue={setSearchKeyword} />
       <Category
         category={searchCategory}

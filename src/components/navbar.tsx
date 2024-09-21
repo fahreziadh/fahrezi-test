@@ -10,13 +10,16 @@ import NavbarCart from "./navbar.cart";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { MenuIcon } from "lucide-react";
+
 const Navbar = () => {
   return (
-    <div className="border-b border-[#515151] bg-background  z-10 sticky top-0 ">
-      <div className="h-20 w-full c flex flex-row items-center">
+    <div className="border-b border-[#515151] bg-background  z-10 sticky -top-20 lg:top-0">
+      <div className="h-20 w-full c flex flex-row items-center justify-between">
+        <div className="flex flex-row items-center">
         <NavbarLogo />
-        <NavbarSearch />
-        <NavbarFilter />
+        <NavbarSearch className="lg:grid hidden"/>
+        <NavbarFilter className="lg:flex hidden"/>
+        </div>
 
         {/* Desktop Only */}
         <div className="grow justify-end hidden md:flex flex-row gap-[24px] items-center ml-[40px]">
@@ -28,6 +31,10 @@ const Navbar = () => {
 
         {/* Mobile Only */}
         <MobileMenu />
+      </div>
+      <div className="lg:hidden flex flex-row items-center justify-between h-20 w-full c">
+        <NavbarSearch className="w-full"/>
+        <NavbarFilter/>
       </div>
     </div>
   );
