@@ -10,19 +10,17 @@ import {
   SlidersHorizontalIcon,
 } from "lucide-react";
 import NavbarCategory from "./navbar.category";
+import NavbarLogo from "./navbar.logo";
 const Navbar = () => {
   return (
-    <div className="h-20 w-full c flex flex-row items-center z-10">
-      <Image
-        src={"/logo.png"}
-        width={170}
-        height={32}
-        alt="Test Logo"
-        className="mr-[100px]"
-      />
+    <div className="h-20 w-full c flex flex-row items-center z-10 sticky top-0 bg-background">
+      <NavbarLogo />
 
       <div className="rounded-full h-12 w-[529px] grid grid-cols-2 bg-[#2B2828] text-[#B3B3B3] overflow-clip">
-        <div className="pl-[32px]"></div>
+      <div className="cursor-pointer hover:bg-foreground/5 w-full h-full pl-[32px] flex flex-col justify-center">
+          <p className="text-xs font-bold">Category</p>
+          <input placeholder="Search here" className="bg-transparent text-foreground placeholder:text-[#B3B3B3] focus:outline-none"/>
+        </div>
         <div className="flex flex-row items-center justify-between h-full relative">
           <div className="border-l border-[#515151] h-[36px] absolute left-0"></div>
           <NavbarCategory />
