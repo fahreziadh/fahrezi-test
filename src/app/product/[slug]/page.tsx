@@ -6,7 +6,7 @@ import { products } from "@/app/products";
 
 const ProductPage = ({ params }: { params: { slug: string } }) => {
   const product = products.find((product) => product.slug === params.slug);
-  
+
   if (!product) {
     notFound();
   }
@@ -17,7 +17,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8">
           {/* Product image */}
           <div className="lg:max-w-lg lg:self-end">
-            <div className="aspect-square rounded-lg overflow-hidden flex flex-col items-center justify-center bg-foreground/5">
+            <div className="aspect-square rounded-lg overflow-hidden flex flex-col items-center justify-center bg-[#443E3E]">
               <div className="p-2 md:text-2xl">
                 <p>{product.category}</p>
                 <p>{`>${product.subcategory}`}</p>
