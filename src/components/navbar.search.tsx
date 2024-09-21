@@ -23,7 +23,7 @@ const NavbarSearch = () => {
   const onChangeSearch = () => {
     const searchParams = new URLSearchParams({
       keyword: searchKeyword,
-      category: searchCategory,
+      category: searchCategory === "All" ? "" : searchCategory,
       subCategory: searchSubCategory,
     });
 
