@@ -12,6 +12,13 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     notFound();
   }
 
+  // Mock user reviews
+  const userReviews = [
+    { id: 1, username: "John Doe", rating: 5, comment: "Great product! Highly recommended." },
+    { id: 2, username: "Jane Smith", rating: 4, comment: "Good quality, but a bit pricey." },
+    { id: 3, username: "Mike Johnson", rating: 5, comment: "Exceeded my expectations. Will buy again!" },
+  ];
+
   return (
     <div className="py-4 sm:py-24 c min-h-screen">
       <div className="lg:grid lg:grid-cols-2">
@@ -86,6 +93,32 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               Add to cart
             </Button>
           </div>
+        </div>
+      </div>
+
+      {/* User Reviews Section */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-foreground mb-4">User Reviews</h2>
+        <div className="space-y-4">
+          {userReviews.map((review) => (
+            <div key={review.id} className="border-b border-foreground/10 pb-4">
+              <div className="flex items-center mb-2">
+                <p className="font-medium text-foreground">{review.username}</p>
+                <div className="flex items-center ml-2">
+                  {[0, 1, 2, 3, 4].map((rating) => (
+                    <StarIcon
+                      key={rating}
+                      className={`${
+                        review.rating > rating ? "fill-foreground" : ""
+                      } h-4 w-4 flex-shrink-0`}
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+              </div>
+              <p className="text-foreground/70">{review.comment}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

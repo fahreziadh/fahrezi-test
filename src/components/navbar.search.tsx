@@ -64,14 +64,14 @@ const Search = ({
     return (
       <button
         onClick={() => setShowSearch(true)}
-        className="cursor-pointer hover:bg-foreground/5 w-full h-full pl-[32px] flex flex-col justify-center"
+        className="cursor-pointer hover:bg-foreground/5 w-full h-full pl-[16px] lg:pl-[32px] flex flex-col justify-center"
       >
         <p className="text-xs font-bold">Keyword</p>
         <motion.p
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           transition={{ duration: 0.2, ease: "circOut" }}
-          className="bg-transparent text-[#B3B3B3] focus:outline-none"
+          className="bg-transparent text-[#B3B3B3] focus:outline-none truncate w-2/3 text-start"
         >
           {value ? value : "Search here"}
         </motion.p>
@@ -116,7 +116,7 @@ const Category = ({
       <div className="border-l border-[#515151] h-[36px] absolute left-0"></div>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <div className="cursor-pointer hover:bg-foreground/5 w-full h-full pl-[32px] flex flex-col justify-center">
+          <div className="cursor-pointer hover:bg-foreground/5 w-full h-full pl-[16px] lg:pl-[32px] flex flex-col justify-center">
             <p className="text-xs font-bold">Category</p>
             <p className="truncate w-2/3">
               {category ? category : "All"}{" "}
