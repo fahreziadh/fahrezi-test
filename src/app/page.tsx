@@ -1,8 +1,10 @@
 "use client";
+
 import { useSearchParams } from "next/navigation";
 import { products } from "../lib/products";
 import CardProduct from "@/components/card-product";
-export default function Home() {
+
+export default function Page() {
   const query = useSearchParams();
 
   const keyword = query.get("keyword") || "";

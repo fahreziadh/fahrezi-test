@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
-import { notFound } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import { ShoppingCartIcon, StarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/products";
 
-const ProductPage = ({ params }: { params: { slug: string } }) => {
-  const product = products.find((product) => product.slug === params.slug);
+const ProductPage = () => {
+  const query = useSearchParams();
+  const slug = query.get("p");
+  const product = products.find((product) => product.slug === slug);
 
   if (!product) {
     notFound();

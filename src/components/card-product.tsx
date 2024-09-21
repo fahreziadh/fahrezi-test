@@ -6,7 +6,7 @@ import { StarIcon } from 'lucide-react'
 const CardProduct = ({product}:{product: typeof products[0]}) => {
   return (
     <Link
-    href={`/product/${product.slug}`}
+    href={`/product?p=${product.slug}`}
     className="hover:bg-foreground/5 p-2 -m-2 rounded-[12px] transition-colors border border-transparent hover:border-foreground/5"
   >
     <div className="w-full aspect-square bg-[#443E3E] rounded-[12px] flex items-center justify-center">
