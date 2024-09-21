@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
 import { ProgressBar } from "@/components/progress-bar";
 
 const inter = Inter({
@@ -23,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <ProgressBar className="fixed top-0 h-1 bg-foreground z-[100]">
-          <Navbar />
           {children}
         </ProgressBar>
       </body>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { products } from "../lib/products";
+import { products } from "../../lib/products";
 import CardProduct from "@/components/card-product";
 
 export default function Page() {

@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output:"export",
-    experimental: {
-        missingSuspenseWithCSRBailout: false,
-      },
-    images:{
-        unoptimized: true
-    }
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
 };
 
 export default nextConfig;
