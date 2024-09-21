@@ -3,7 +3,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { ShoppingCartIcon, StarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { products } from "@/app/products";
+import { products } from "@/lib/products";
 
 const ProductPage = ({ params }: { params: { slug: string } }) => {
   const product = products.find((product) => product.slug === params.slug);

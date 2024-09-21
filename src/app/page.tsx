@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { products } from "./products";
+import { products } from "../lib/products";
 import CardProduct from "@/components/card-product";
 export default function Home() {
   const query = useSearchParams();
@@ -8,12 +8,17 @@ export default function Home() {
   const keyword = query.get("keyword") || "";
   const category = query.get("category") || "";
   const subCategory = query.get("subCategory") || "";
+  const priceRange = query.get("priceRange")?.split(',').map(Number) || [0, Infinity];
+  const platforms = query.get("platforms") || "";
 
   const filteredProducts = products.filter((product) => {
     return (
       product.productName.toLowerCase().includes(keyword.toLowerCase()) &&
       product.category.toLowerCase().includes(category.toLowerCase()) &&
-      product.subcategory.toLowerCase().includes(subCategory.toLowerCase())
+      product.subcategory.toLowerCase().includes(subCategory.toLowerCase()) &&
+      (priceRange[0] === undefined || product.price >= priceRange[0]) &&
+      (priceRange[1] === undefined || product.price <= priceRange[1]) &&
+      (platforms === "" || product.platforms.includes(platforms))
     );
   });
 

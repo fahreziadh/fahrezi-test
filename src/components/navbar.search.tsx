@@ -5,7 +5,7 @@ import { ChevronRightIcon, SearchIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { categoryStructure } from "@/app/categories";
+import { categoryStructure } from "@/lib/categories";
 
 const NavbarSearch = () => {
   const query = useSearchParams();
@@ -124,14 +124,14 @@ const Category = ({
             </p>
           </div>
         </PopoverTrigger>
-        <PopoverContent className="w-[444px] grid grid-cols-2 p-4" align="end">
+        <PopoverContent className="w-[444px] grid grid-cols-2 p-4 rounded-[32px]  min-h-[344px] " align="end">
           {/* Category */}
           <div className="flex flex-col h-max">
             {Object.keys(categoryStructure).map((e) => (
               <Button
                 key={e}
                 variant={category === e ? "secondary" : "ghost"}
-                className="justify-between w-full"
+                className="justify-between w-full text-base h-10"
                 onClick={() => {
                   if (category === e) {
                     onChangeCategory("");
@@ -160,7 +160,7 @@ const Category = ({
                 <Button
                   key={e}
                   variant={subcategory === e ? "secondary" : "ghost"}
-                  className="justify-between w-full"
+                  className="justify-between w-full  text-base h-10"
                   onClick={() => {
                     if (subcategory === e) {
                       onChangeSubCategory("");
@@ -174,7 +174,7 @@ const Category = ({
               ))}
                <Button
                   variant={subcategory === "" ? "secondary" : "ghost"}
-                  className="justify-between w-full"
+                  className="justify-between w-full h-10 text-base"
                   onClick={() => {
                     onChangeSubCategory("");
                   }}

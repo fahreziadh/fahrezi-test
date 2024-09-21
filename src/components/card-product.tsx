@@ -1,4 +1,4 @@
-import { products } from '@/app/products'
+import { products } from '@/lib/products'
 import React from 'react'
 import { Link } from './progress-bar.link'
 import { StarIcon } from 'lucide-react'
