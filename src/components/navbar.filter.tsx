@@ -61,7 +61,7 @@ const NavbarFilter = () => {
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="w-[560px] p-0 bg-[#2B2828]"
+        className="w-full md:w-[560px] p-0 bg-[#2B2828]"
         align="end"
         sideOffset={38}
       >

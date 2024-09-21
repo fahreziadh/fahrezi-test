@@ -124,7 +124,7 @@ const Category = ({
             </p>
           </div>
         </PopoverTrigger>
-        <PopoverContent className="w-[444px] grid grid-cols-2 p-4 rounded-[32px]  min-h-[344px] " align="end">
+        <PopoverContent className="w-[360px] sm:w-[444px] grid grid-cols-2 p-4 rounded-[32px]  min-h-[344px] " align="end">
           {/* Category */}
           <div className="flex flex-col h-max">
             {Object.keys(categoryStructure).map((e) => (
